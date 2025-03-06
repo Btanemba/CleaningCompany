@@ -272,10 +272,17 @@ button {
     text-align: center;
     margin-top: 30px;
 }
-.toggle_menu {
+/* .toggle_menu {
     top: 8px;
     position: relative;
     left: 0px;
+} */
+
+.toggle_menu {
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    top: 10px; /* Adjust the value as needed to align properly */
+    right: 10px; /* Adjust the value as needed to move it to the right */
+    z-index: 10; /* Ensure it's above other elements */
 }
 .shoping_bag {
     float: right;
@@ -402,7 +409,7 @@ button {
     float: left;
     font-size: 16px;
     color: #333333;
-    margin-left: 0px;   
+    margin-left: 0px;
 }
 .box_section {
     width: 100%;
@@ -580,7 +587,7 @@ button {
     width: 100%;
     float: left;
     text-align: center;
-    padding-top: 70px; 
+    padding-top: 70px;
 }
 
 .get_bt{
@@ -799,7 +806,7 @@ input.email_text::placeholder {
     border: 0px;
     height: 90px;
     text-transform: uppercase;
-    padding: 40px 15px 0px 15px;  
+    padding: 40px 15px 0px 15px;
 }
 textarea#comment::placeholder {
     color: #717471;
