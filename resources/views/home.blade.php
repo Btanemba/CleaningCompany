@@ -2,7 +2,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+          <div class="logo"><a href=""><img src="images/Elbio.jpg" style="width: 90px; height: auto;">
+          </a></div>
         </div>
         <div class="col-md-9">
           <div class="menu_text">
@@ -39,9 +40,9 @@
             <div class="contact_bt"><a href="contact.html">CONTACT US<span class="contact_padding"><img
                     src="images/contact-icon.png"></span></a></div>
           </div>
-          <div class="col-sm-2">
+          {{-- <div class="col-sm-2">
             <div class="play_icon"><a href="#"><img src="images/play-icon.png"></a></div>
-          </div>
+          </div> --}}
           <div class="col-sm-5">
             <div><img src="images/img-1.png" class="image_1"></div>
           </div>

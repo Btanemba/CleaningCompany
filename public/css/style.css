@@ -272,11 +272,6 @@ button {
     text-align: center;
     margin-top: 30px;
 }
-/* .toggle_menu {
-    top: 8px;
-    position: relative;
-    left: 0px;
-} */
 
 .toggle_menu {
     position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
