@@ -1,52 +1,64 @@
-<div class="footer_section layout_padding">
-    <div class="container">
-      <div class="footer_main">
-        <div class="footer_left">
-          <h1 class="contact_taital"><span>Contact </span> <img src="images/icon-2.png"> <span>Us</span></h1>
-        </div>
-        <div class="footer_left">
-          <div class="location_text"><a href="#"><img src="images/map-icon.png"><span
-                class="padding_left_15">Locations</span></a></div>
-        </div>
-        <div class="footer_left">
-          <div class="location_text"><a href="#"><img src="images/call-icon.png"><span class="padding_left_15">+71
-                9876543210</span></a></div>
-        </div>
-        <div class="footer_left">
-          <div class="location_text"><a href="#"><img src="images/map-icon.png"><span
-                class="padding_left_15">demo@gmail.com</span></a></div>
-        </div>
-      </div>
-      <div class="contact_section">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="mail_section">
-              <input type="" class="email_text" placeholder="Name" name="Name">
-              <input type="" class="email_text" placeholder="Email" name="Email">
-              <input type="" class="email_text" placeholder="Phone Number" name="Phone Number">
-              <textarea class="massage_text" placeholder="Message" rows="5" id="comment" name="Message"></textarea>
-              <div class="send_bt"><a href="#">send</a></div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="map_main">
-              <div class="map-responsive">
-                <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
-                  width="600" height="280" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div class="social_icon">
-              <ul>
-                <li><a href="#"><img src="images/fb-icon1.png"></a></li>
-                <li><a href="#"><img src="images/twitter-icon1.png"></a></li>
-                <li><a href="#"><img src="images/linkden-icon1.png"></a></li>
-                <li><a href="#"><img src="images/instagram-icon1.png"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- footer section start -->
+
+@if (session('success'))
+    <div id="success" class="alert alert-success mt-4">
+        {{ session('success') }}
     </div>
-  </div>
-  <!-- footer section end -->
+@endif
+<div class="footer_section py-5" style="background-color: #c5e9f5;">
+    <div class="container">
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-6">
+                <h1 class="contact_taital fw-bold text-dark d-flex align-items-center">
+                    <span class="me-2">Contact</span>
+                    <img src="images/icon-2.png" alt="icon" style="height: 30px;" class="me-2">
+                    <span>Us</span>
+                </h1>
+            </div>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                <a href="mailto:info@elbio.org"
+                    class="text-dark text-decoration-none d-flex align-items-center justify-content-md-end">
+                    <img src="images/map-icon.png" alt="email icon" style="height: 20px;">
+                    <span class="ms-2">info@elbio.org</span>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form method="POST" action="{{ route('contact.submit') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" placeholder="Message" rows="5" name="message" required></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const successMessage = document.getElementById('success');
+        if (successMessage) {
+            successMessage.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+</script>
+<!-- footer section end -->
